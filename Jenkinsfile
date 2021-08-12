@@ -22,7 +22,7 @@ pipeline {
       }
     stage("Deploy"){
       steps{
-        echo "This is Deploy stage"
+        ansible -m ping all;
       }
     }
   }
