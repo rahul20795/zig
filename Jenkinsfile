@@ -21,9 +21,10 @@ pipeline {
         }
       }
     stage("Deploy"){
-      steps{
-        ansible -m ping all
-      }
+      ansiblePlaybook(
+        playbook:'${WORKSPACE}/test.yaml',
+        colorised: true
+        )        
     }
   }
 }
