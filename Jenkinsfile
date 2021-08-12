@@ -21,10 +21,12 @@ pipeline {
         }
       }
     stage("Deploy"){
-      ansiblePlaybook(
+      steps{
+        ansiblePlaybook(
         playbook:'${WORKSPACE}/test.yaml',
         colorised: true
-        )        
+        )
+      }
     }
   }
 }
